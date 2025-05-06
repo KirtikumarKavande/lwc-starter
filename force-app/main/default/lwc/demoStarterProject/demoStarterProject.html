@@ -1,4 +1,10 @@
 <template>
-<div>{firstElementInArray}</div>
-<div>{total}</div>
+<input type="text" oninput={typeInsideInput}>
+
+<template lwc:if={isShow}>
+    <div></div>
+</template>
+<template lwc:else>
+   No Text Entered plz type something inside the input box
+</template>
 </template>
