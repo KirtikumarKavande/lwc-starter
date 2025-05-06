@@ -1,18 +1,18 @@
 import { LightningElement, track } from 'lwc';
 
 export default class DemoStarterProject extends LightningElement {
-    name = "kirtikumar Kavande"
-    designation = "Developer"
-    handleChange(e) {
-        this.designation = e.target.value
+
+    array = ["World", "Paradise", "Kirtikumar",]
+
+    num1 = 10
+    num2 = 20
+
+    get total() {
+        return this.num1 * this.num2
     }
-    address = {
-        street: "123, ABC",
-        city: "PQR",
-        state: "XYZ",
-        zip: "111"
+
+    get firstElementInArray() {
+        return this.array[0]
     }
-    changeCity(e) {
-        this.address = { ...this.address, city: e.target.value }
-    }
+
 }
