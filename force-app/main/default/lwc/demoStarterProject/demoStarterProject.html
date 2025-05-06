@@ -1,10 +1,14 @@
-<template>
-<input type="text" oninput={typeInsideInput}>
+<template >
+    <template iterator:it={items}>
+        <div key={it.value.id} >
+            <template if:true={it.first}>
+                <div class="first-item">First: {it.value.name}</div>
+            </template>
+            <template if:false={it.first}>
+                <div class="regular-item">Item: {it.value.name}</div>
+            </template>
+        </div>
+    </template>
+</template>
 
-<template lwc:if={isShow}>
-    <div></div>
-</template>
-<template lwc:else>
-   No Text Entered plz type something inside the input box
-</template>
-</template>
+
