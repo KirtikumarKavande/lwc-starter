@@ -1,14 +1,6 @@
 <template >
-    <template iterator:it={items}>
-        <div key={it.value.id} >
-            <template if:true={it.first}>
-                <div class="first-item">First: {it.value.name}</div>
-            </template>
-            <template if:false={it.first}>
-                <div class="regular-item">Item: {it.value.name}</div>
-            </template>
-        </div>
-    </template>
+    <c-parent-hello-component></c-parent-hello-component>
+    <c-anotherc-child-component></c-anotherc-child-component>
 </template>
 
 
