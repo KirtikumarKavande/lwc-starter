@@ -1,6 +1,11 @@
-<template >
-    <c-parent-hello-component></c-parent-hello-component>
-    <c-anotherc-child-component></c-anotherc-child-component>
+<template>
+    <div >
+        <h1>Dynamic Styling Demo</h1>
+        <input type="number" oninput={handleInputChange}>
+        <div class="preview-section">
+            <div class="dynamic-box" style={boxStyle}>
+                 {percentage}%
+            </div>
+        </div>
+    </div>
 </template>
-
-
