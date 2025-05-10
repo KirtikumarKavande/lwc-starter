@@ -1,8 +1,11 @@
 <template>
    <div class="container">
     <div class="text-color">
-        this is demoStarterProject
-
+        this is demoStarterProject parent
+        <button onclick={handleClick}>Remove child component</button>
+        <template if:true={isShow}>
+            <c-anotehr-demo-starter-project></c-anotehr-demo-starter-project>
+        </template>
 
     </div>
    </div>
