@@ -1,10 +1,11 @@
-import { LightningElement,api } from 'lwc';
+import { LightningElement, api } from 'lwc';
 export default class ChildComponent extends LightningElement {
-    @api name
-    @api myAge
-    @api arr
-    connectedCallback(){
-        console.log(this.name)
-        console.log(this.myAge)
+    @api isShowModal
+    renderedCallback() {
+        console.log(this.isShowModal)
+    }
+    closeModal() {
+        let myEvent = new CustomEvent('close', { detail: "hello from child element modal has been closed" })
+        this.dispatchEvent(myEvent)
     }
 }

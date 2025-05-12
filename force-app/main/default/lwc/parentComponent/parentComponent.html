@@ -1,3 +1,6 @@
 <template>
-    <c-child-component name="kirtikumar" my-age=25 is-valid=true array={array}></c-child-component>
+    <button onclick={openModal} >Open modal</button>
+    <div>{msg}</div>
+    <c-child-component is-show-modal={isShowModal} onclose={handleClose}></c-child-component>
 </template>
+

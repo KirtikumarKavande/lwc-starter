@@ -1,5 +1,13 @@
 import { LightningElement } from 'lwc';
 
 export default class ParentComponent extends LightningElement {
-    array = [{ player: "Yuvraj singh", backNo: 12 }, { player: "Virat Kohali", backNo: 18 }]
+    isShowModal = false
+    msg=""
+    openModal() {
+        this.isShowModal = true
+    }
+    handleClose(e) {
+        this.isShowModal = false
+        this.msg=e.detail
+    }
 }
