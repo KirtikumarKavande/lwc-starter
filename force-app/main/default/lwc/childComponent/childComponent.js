@@ -5,7 +5,7 @@ export default class ChildComponent extends LightningElement {
         console.log(this.isShowModal)
     }
     closeModal() {
-        let myEvent = new CustomEvent('close', { detail: "hello from child element modal has been closed" })
+        let myEvent = new CustomEvent('close', { bubbles: true, detail: "hello from child element modal has been closed" })
         this.dispatchEvent(myEvent)
     }
 }
