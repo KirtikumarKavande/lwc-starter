@@ -1,11 +1,7 @@
 import { LightningElement, api } from 'lwc';
 export default class ChildComponent extends LightningElement {
-    @api isShowModal
-    renderedCallback() {
-        console.log(this.isShowModal)
-    }
-    closeModal() {
-        let myEvent = new CustomEvent('close', { bubbles: true, detail: "hello from child element modal has been closed" })
-        this.dispatchEvent(myEvent)
+    handleSlotChange(){
+        let footer=this.template.querySelector('.floating-footer')
+        footer.classList.remove('slds-hide')
     }
 }
