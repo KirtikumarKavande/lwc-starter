@@ -1,10 +1,15 @@
 <template>
-    <div>What is your name?</div>
-    <slot name="personalInfo"></slot>
-    <div>What is your profession?</div>
-    <slot name="professionalInfo"></slot>
+    <div class="card">
+        <header>
+            <slot name="header"></slot>
+        </header>
 
-    <footer class="floating-footer slds-hide">
-        <slot name="footer" onslotchange={handleSlotChange}></slot>
-    </footer>
+        <div class="body">
+            <slot></slot>
+        </div>
+
+        <footer style="display: none;">
+            <slot onslotchange={handleSlotChange} name="footer"></slot>
+        </footer>
+    </div>
 </template>

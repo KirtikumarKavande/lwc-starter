@@ -1,15 +1,9 @@
 <template>
-
-    <c-child-component>
-        <p slot="personalInfo">My name is kirtikumar</p>
-        <p slot="professionalInfo">I am working as a frontend developer</p>
-        <div slot="footer">This is footer</div>
-    </c-child-component>
-<hr>
-    <c-child-component>
-        <p slot="personalInfo">My name is Virat</p>
-        <p slot="professionalInfo">I am working as a Cricketer</p>
-    </c-child-component>
+    <h1>I am Parent</h1>
+    <input type="text" oninput={handleInput}>
+    <button onclick={publishMessage}>click</button>
+    <!-- <c-child-component>
+       
+    </c-child-component> -->
 
 </template>
-

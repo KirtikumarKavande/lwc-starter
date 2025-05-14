@@ -1,0 +1,17 @@
+.card{
+    width: 100%;
+    min-height: 300px;
+    border: 2px rgb(179, 122, 122) solid;
+    box-shadow: gray;
+}
+header{
+    height: 80px;
+    border-bottom: 2px solid gray;
+}
+.body{
+    min-height: 100px;
+}
+footer{
+    height: 80px;
+    border-top: 2px solid gray;
+}
