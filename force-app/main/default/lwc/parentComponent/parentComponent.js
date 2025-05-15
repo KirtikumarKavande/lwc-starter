@@ -1,21 +1,20 @@
-import { LightningElement, wire } from 'lwc';
-import SAMPLEMC from "@salesforce/messageChannel/DemoMessageChannel__c";
-import { MessageContext,publish } from 'lightning/messageService';
+import { LightningElement } from 'lwc';
+
+import MOMENT from "@salesforce/resourceUrl/moment"
+import { loadScript } from "lightning/platformResourceLoader"
 export default class ParentComponent extends LightningElement {
-   @wire(MessageContext)
-   context;
-
-   inputValue
-   handleInput(e){
-    this.inputValue=e.target.value
-   }
-
-   publishMessage(){
-    const message={
-        lmsData:{
-            value:this.inputValue
-        }
+    currentDate
+    isLoaded = false
+    renderedCallback() {
+        if (this.isLoaded) return
+        loadScript(this, MOMENT + '/moment.min.js').then(() => {
+            this.dateFormatter()
+        }).catch(() => {
+            console.log("error occurred")
+        })
+        this.isLoaded = true
     }
-    publish(this.context,SAMPLEMC,message)
-   }
+    dateFormatter() {
+        this.currentDate = moment().format('LLLL')
+    }
 }
